@@ -2,7 +2,7 @@
 # A simple bash script for generating CSRs in which the only difference in info will be the Common Name
 # Define the various variables to your fitting and just run the script, it will prompt you for the CN
 
-which openssl
+which openssl >> /dev/null
 check_openssl=$(echo $?)
 if [[ $check_openssl == 1 ]]; then
   echo "openssl binary could not be found. Make sure it installed and found in your \$PATH"
