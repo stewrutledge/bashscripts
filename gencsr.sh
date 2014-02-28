@@ -3,9 +3,7 @@
 # Define the various variables to your fitting and just run the script, it will prompt you for the CN
 # Author and Maintainer Stewart Rutledge <stewart.rutledge@kb.se>
 
-which openssl >> /dev/null
-check_openssl=$(echo $?)
-if [[ $check_openssl == 1 ]]; then
+if ! which openssl >/dev/null ; then
   echo "openssl binary could not be found. Make sure it installed and found in your \$PATH"
   exit 1
 fi
